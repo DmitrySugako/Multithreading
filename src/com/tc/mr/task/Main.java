@@ -23,10 +23,25 @@ public class Main {
 		Thread Michael = new Thread(new ThirdManager(turn, "Manager Michael"));
 
 		John.start();
+		try {
+			John.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 
 		Bill.start();
+		try {
+			Bill.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 
 		Michael.start();
+		try {
+			Michael.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 
 	}
 }
